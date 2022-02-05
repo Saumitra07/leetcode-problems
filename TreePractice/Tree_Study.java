@@ -67,23 +67,30 @@ package TreePractice;
 
         }
 
-        void find_min()
+        int find_min(Node root)
         {
             if(root==null)
             {
                 System.out.println("Tree is empty");
             }
             else{
-
-                Node x=root;
-                while(x.left!=null)
+//
+//                Node x=root;
+//                while(x.left!=null)
+//                {
+//
+//                    x=x.left;
+//                }
+                while(root.left!=null)
                 {
 
-                    x=x.left;
+                    root=root.left;
                 }
 
-                System.out.println("Min element is"+x.data);
+                System.out.println("Min element is"+root.data)
+                ;
             }
+            return  root.data;
         }
         int find_recursive_min()
         {
@@ -113,11 +120,15 @@ package TreePractice;
             ts.root=ts.insert(ts.root,12);
             ts.insert(ts.root,25);
             ts.insert(ts.root,14);
+            ts.insert(ts.root,1);
             //System.out.println(ts.root);
           //  ts.inorder(ts.root);
-            ts.postorder(ts.root);
+//            ts.postorder(ts.root);
+          //  ts.search(ts.root,25);
          //   ts.find_min();
            // System.out.println(ts.find_recursive_min());
+            System.out.println(ts.find_min(ts.root));
+            System.out.println("root elemnt is"+ts.root.data);
         System.out.println(ts.search(ts.root,14));
         }
     }
