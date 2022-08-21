@@ -2,8 +2,8 @@ package com.company;
 
 public class FloorOfNumber {
     public static void main(String[] args) {
-        int []a={1,4,6,8,10};
-        System.out.println(search(a,9));
+        int []a={1,2,6,8,10,12,15};
+        System.out.println(search(a,5));
     }
     public static int search(int []arr,int target)
     {

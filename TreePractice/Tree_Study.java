@@ -1,5 +1,9 @@
 package TreePractice;
-     class Tree_study {
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+class Tree_study {
 
         class Node{
             int data;
@@ -34,6 +38,24 @@ package TreePractice;
 
         }
 
+
+        void levelOrder(Node temp)
+        {
+            Queue<Node> q=new LinkedList<>();
+            q.add(temp);
+            while(!q.isEmpty())
+            {
+                Node p=q.remove();
+                System.out.println(p.data);
+                if(p.left!=null)
+                    q.add(p.left);
+                if(p.right!=null)
+                    q.add(p.right);
+            }
+
+
+
+        }
         void inorder(Node temp)
         {
             if (temp == null)
@@ -130,6 +152,8 @@ package TreePractice;
             System.out.println(ts.find_min(ts.root));
             System.out.println("root elemnt is"+ts.root.data);
         System.out.println(ts.search(ts.root,14));
+        System.out.println("LEVEL ORDER TRAVERSAL");
+        ts.levelOrder(ts.root);
         }
     }
 

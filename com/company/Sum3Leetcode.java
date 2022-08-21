@@ -14,28 +14,31 @@ public class Sum3Leetcode {
 
         for(int i=0;i<n-2;i++)
         {
-            rem=0-nums[i];
+
+            if(i>0 && nums[i]==nums[i-1])
+                continue;
 
             int x=i+1;
             int y=n-1;
-
-            List<List<Integer>> pairs=new ArrayList<List<Integer>>();
 
 
           //  System.out.println(numList.toArray());
             while(x<y)
             {
-                if(nums[x]+nums[y]==rem)
+                if(nums[x]+nums[y]+nums[i]==0)
                 {
-                    List<Integer> pair1=new ArrayList<Integer>();
-                    pair1.add(nums[x]);
-                    pair1.add(nums[y]);
-                    pairs.add(pair1);
+//                    List<Integer> pair1=new ArrayList<Integer>();
+//                    pair1.add(nums[x]);
+//                    pair1.add(nums[y]);
+//                    pairs.add(pair1);
 
                         res.add(Arrays.asList(nums[i],nums[x],nums[y]));
 
-                    x++;
-                    y--;
+                 x++;
+                 while(nums[x-1]==nums[x] && x<y)
+                 {
+                     x++;
+                 }
                 }
                 else if(nums[x]+nums[y]>rem)
                 {

@@ -4,8 +4,8 @@ import java.util.HashMap;
 
 public class LongestSubArraySumEqualsToK {
     public static void main(String[] args) {
-        int []a={1,2,3,-6,6};
-        System.out.println(lenOfLongSubarr(a,5,6));
+        int []a={1,1,1,-1,-1,1,-2,3};
+        System.out.println(lenOfLongSubarr(a,8,2));
 
     }
 
@@ -24,9 +24,9 @@ public class LongestSubArraySumEqualsToK {
                 if (size < (i - map.get(sum - K)))
                     size = i - map.get(sum - K);
             }
-            if (!map.containsKey(sum)) {
+         if (!map.containsKey(sum)) {
                 map.put(sum, i);
-            }
+       }
         }
 
         return size;

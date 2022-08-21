@@ -107,6 +107,7 @@ public class GroupAnagram {
         for (String s : strs) {
             char[] ca = new char[26];
             for (char c : s.toCharArray()) ca[c - 'a']++;
+            System.out.println(Arrays.toString(ca));
             String keyStr = String.valueOf(ca);
             if (!map.containsKey(keyStr)) map.put(keyStr, new ArrayList<>());
             map.get(keyStr).add(s);
