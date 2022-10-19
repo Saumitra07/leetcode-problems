@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Graphs;
 
 import javax.sound.midi.SysexMessage;
 import java.util.LinkedList;

@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Graphs;
 
 public class MaxAreaIslands {
     private static int current_area=0;

@@ -42,12 +42,37 @@ public class Graph {
            //adjacencylist[verticesMap.get(destination)].addFirst(edge1); //for undirected
 
         }
-        public void dfs(int v)
+        public void dfsrecursive(Character v, int[] visited)
+        {
+            visited[verticesMap.get(v)]=1;
+            LinkedList<Edge> allNeighbors = adjacencylist[verticesMap.get(v)];
+            for(Edge edge:allNeighbors)
+            {
+                if(visited[verticesMap.get(edge.destination)]==0)
+                {
+                   // System.out.println(edge.source+"...."+edge.destination);
+                    dfsrecursive(edge.destination,visited);
+                }
+
+            }
+        }
+        public void dfs(Character s)
         {
           //  node.visit();
            // System.out.print(node.name + " ");
 
-            LinkedList<Edge> allNeighbors = adjacencylist[verticesMap.get(v)];
+
+            LinkedList<Edge> allNeighbors = adjacencylist[verticesMap.get(s)];
+
+            int[] visited=new int[4];
+
+            for(Character v:verticesMap.keySet())
+            {
+                if(visited[verticesMap.get(v)]==0)
+                {
+                    dfsrecursive(v,visited);
+                }
+            }
             if (allNeighbors == null)
                 return;
             for(Edge edge:allNeighbors)
@@ -80,7 +105,8 @@ public class Graph {
             graph.addEgde('A', 'C', 2);
             graph.addEgde('B','D',3);
 
-            graph.printGraph();
+          //graph.printGraph();
+        graph.dfs('A');
         }
     }
 }

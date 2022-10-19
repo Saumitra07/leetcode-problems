@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Graphs;
 
 import java.util.Stack;
 // this solution is iterative.

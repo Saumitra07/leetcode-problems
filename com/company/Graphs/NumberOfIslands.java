@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Graphs;
 
 public class NumberOfIslands {
     public static void main(String[] args) {

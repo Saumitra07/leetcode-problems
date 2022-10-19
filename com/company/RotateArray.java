@@ -9,6 +9,7 @@ public class RotateArray {
             nums=callReverse(nums);
         }
         return nums;
+
     }
     public static int[] callReverse(int []nums)
     {
@@ -33,6 +34,12 @@ public class RotateArray {
 
     public static void main(String[] args) {
         int []a={1,2,3,4,5,6,7};
-        System.out.println(Arrays.toString(rotate(a,3)));
+//        System.out.println(Arrays.toString(rotate(a,3)));
+
+
+        for(int i=1;i<=9;i++)
+        {
+            System.out.println(Integer.toString(i).charAt(0));
+        }
     }
 }
