@@ -11,7 +11,28 @@ public class FrogJumpStriver {
 
         int[] dp=new int[n+1];
         Arrays.fill(dp,0,dp.length,-1);
-        System.out.println(countMinEnergy(arr, n-1, dp));
+
+        //tabulization
+
+        dp[0]=0;
+        for(int i=1;i<n;i++)
+        {
+           int fs= dp[i-1] + Math.abs(arr[i]-arr[i-1]);
+            int dj=Integer.MAX_VALUE;
+            if(i>1)
+            {
+                 dj=dp[i-2]+ Math.abs(arr[i]-arr[i-2]);
+            }
+          
+            dp[i]=Math.min(fs,dj);
+        }
+
+
+        System.out.println(dp[n-1]);
+
+        
+        //Memoization
+       // System.out.println(countMinEnergy(arr, n-1, dp));
 
     }
 
