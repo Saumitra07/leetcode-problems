@@ -12,6 +12,30 @@ public class FrogJumpStriver {
         int[] dp=new int[n+1];
         Arrays.fill(dp,0,dp.length,-1);
 
+        //Space optimization
+
+
+        int  a=0;
+        int b=Math.abs(arr[1]-arr[0]);
+           for(int i=2;i<n;i++)
+         {
+            int fs= b + Math.abs(arr[i]-arr[i-1]);
+             int dj=Integer.MAX_VALUE;
+             if(i>1)
+             {
+                  dj=a+ Math.abs(arr[i]-arr[i-2]);
+             }
+           
+             int c= Math.min(fs,dj);
+               
+             a=b;
+               b=c;
+             //dp[i]=
+         }
+
+
+System.out.println(b);
+
         //tabulization
 
         dp[0]=0;
