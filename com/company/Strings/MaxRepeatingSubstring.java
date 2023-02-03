@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Strings;
 
 public class MaxRepeatingSubstring {
     public static void main(String[] args) {
