@@ -105,7 +105,7 @@ public class GroupAnagram {
         if (strs == null || strs.length == 0) return new ArrayList<>();
         Map<String, List<String>> map = new HashMap<>();
         for (String s : strs) {
-            char[] ca = new char[26];
+            int[] ca = new int[26];
             for (char c : s.toCharArray()) ca[c - 'a']++;
             System.out.println(Arrays.toString(ca));
             String keyStr = String.valueOf(ca);
